@@ -1,0 +1,15 @@
+#include "character.h"
+
+class Bullet : public character
+{
+private:
+	//int ani_row ;
+	//static int size;
+	void (*score)(void);
+public:
+	Bullet(float x, float y/*, ALLEGRO_BITMAP * image*/, void (*score)(void));
+	void update();
+	void render();
+	void initiate();
+	void collided(int objectID);
+};

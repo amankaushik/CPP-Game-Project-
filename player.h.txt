@@ -1,0 +1,33 @@
+#include "character.h"
+
+class player : public character
+{
+private :
+	int score;
+	int lives;
+	int ani_row;
+	//int level;
+
+public :
+	player() {score = 0, lives = 0, ani_row = -1;}
+	void initiate(ALLEGRO_BITMAP * image);
+	void update();
+	void render();
+
+	void move_up();
+	void move_down();
+	void move_left();
+	void move_right();
+
+	void reset_original_position(int pos);
+
+	int get_lives();
+	int get_score();
+	//int get_level();
+	
+	void inc_life();
+	void get_life(); 
+	void inc_score();
+
+	void collided (int object_ID);
+};

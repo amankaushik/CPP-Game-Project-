@@ -1,0 +1,67 @@
+#pragma once
+
+#include <iostream>
+#include <allegro5/allegro5.h>
+#include <allegro5/allegro_primitives.h>
+#include "Global.h"
+
+class character
+{
+private:
+	int ID;
+	bool alive;
+	bool collidable;
+
+protected:
+	float origin_x;
+	float origin_y;
+
+	float vel_x;
+	float vel_y;
+
+	int dir_x;
+	int dir_y;
+
+	int bound_x;
+	int bound_y;
+
+	int max_frame;
+	int cur_frame;
+	int frame_count;
+	int frame_delay;
+	int frame_width;
+	int frame_height;
+	int ani_col;
+	int ani_dir;
+
+	ALLEGRO_BITMAP *image;
+
+public:
+	character();
+	
+	void virtual initiate(float x, float y, float vx, float vy, int dx, int dy, int bx, int by);
+	void virtual update();
+	void virtual render() = 0;
+
+	float get_origin_x() {return origin_x;}
+	float get_origin_y() {return origin_y;}
+
+	void set_origin_x(float x) {origin_x = x;}
+	void set_origin_y(float y) {origin_y = y;}
+
+	int get_bound_x() {return bound_x;}
+	int get_bound_y() {return bound_y;}
+
+	int get_ID() {return ID;}
+	void set_ID(int i_d) {ID = i_d;}
+
+	bool get_alive() {return alive;}
+	void set_alive(bool alv) {alive = alv;}
+
+	bool get_collidable() {return collidable;}
+	void set_collidable(bool colide) {collidable = colide;}
+
+	bool check_collisions(character *ob);
+	void virtual collided(int object_ID) = 0;
+	bool coll_idable();
+};

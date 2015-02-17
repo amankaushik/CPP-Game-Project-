@@ -1,0 +1,14 @@
+#include "character.h"
+
+class Explosion : public character
+{
+private:
+
+public:
+	Explosion(float x, float y, ALLEGRO_BITMAP *image);
+	
+	void initiate(); 
+	void update();
+	void render();
+	void collided(int a);
+};

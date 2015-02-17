@@ -1,0 +1,15 @@
+#include "character.h"
+
+class enemy : public character
+{
+private:
+	void (*take_life)(void);
+public:
+	enemy(float x, float y, ALLEGRO_BITMAP *image, void (*take_life)(void));
+
+	void initiate();
+	void update();
+	void render();
+
+	void collided(int objectID);
+};

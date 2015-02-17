@@ -1,0 +1,23 @@
+#include "Global.h"
+#include <allegro5/allegro5.h>
+#include <allegro5\allegro_image.h>
+
+class background
+{
+	float origin_x;
+	float origin_y;
+	float vel_x;
+	float vel_y;
+	int width;
+	int height;
+	int dir_x;
+	int dir_y;
+
+	ALLEGRO_BITMAP *im;
+
+public :
+	background(){origin_x = 0.0, origin_y = 0.0, vel_x = 0.0, vel_y = 0.0, width = 0, height = 0, dir_x = -1, dir_y = 1, im = NULL;}
+	void initiate_background(float, float, float, float, int, int, int, int, ALLEGRO_BITMAP *);
+	void update_background();
+	void render_background();
+};

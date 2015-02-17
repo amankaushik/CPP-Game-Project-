@@ -1,0 +1,8 @@
+#pragma once
+
+const int screen_width = 800;
+const int screen_height = 600;
+const int FPS = 60;
+
+enum ID{PLAYER, ENEMY, BULLET, BORDER, EXPLOSION, BACKGROUND, MISC};
+enum STATE{START, PLAYING, LOST};
